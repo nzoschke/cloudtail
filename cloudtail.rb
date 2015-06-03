@@ -36,7 +36,7 @@ end
 
 @seen_event_ids = {}
 
-def poll
+def print_events
   events = {}
 
   ecs_service_events.each do |e|
@@ -60,9 +60,9 @@ def poll
   events.keys.sort.each do |k|
     events[k].each { |e| puts e }
   end
-
-  sleep 5
-  poll
 end
 
-poll
+loop do
+  print_events
+  sleep 5
+end

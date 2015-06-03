@@ -17,3 +17,5 @@ COPY Gemfile.lock /root/Gemfile.lock
 RUN bundle install
 
 COPY . /root
+
+ENTRYPOINT ["ruby", "cloudtail.rb"]
